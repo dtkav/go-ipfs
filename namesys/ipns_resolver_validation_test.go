@@ -5,24 +5,24 @@ import (
 	"testing"
 	"time"
 
-	path "gx/ipfs/QmUB3RFRDctDp1k73mDJydzWiKdiuNHfyuoRPQeU52rWWT/go-path"
+	path "gx/ipfs/Qmc3xBbgLrsqwFTn2eAdiMtRpesYVpMdhaQG75WEe6XfaT/go-path"
 
 	opts "github.com/ipfs/go-ipfs/namesys/opts"
 
-	u "gx/ipfs/QmPdKqUcHGFdeSpvjVoaTRPPstGif9GBZb5Q56RVw9o69A/go-ipfs-util"
-	ci "gx/ipfs/QmPvyPwuCgJ7pDmrKDxRtsScJgBaM5h4EpRL2qQJsmXf4n/go-libp2p-crypto"
-	peer "gx/ipfs/QmTRhk7cgjUf2gfQ3p2M9KPECNZEW9XUrmHcFCgog4cPgB/go-libp2p-peer"
-	pstore "gx/ipfs/QmTTJcDL3gsnGDALjh2fDGg1onGRUdVgNL2hU2WEZcVrMX/go-libp2p-peerstore"
-	pstoremem "gx/ipfs/QmTTJcDL3gsnGDALjh2fDGg1onGRUdVgNL2hU2WEZcVrMX/go-libp2p-peerstore/pstoremem"
-	testutil "gx/ipfs/Qma6ESRQTf1ZLPgzpCwDTqQJefPnU6uLvMjP18vK8EWp8L/go-testutil"
-	record "gx/ipfs/Qma9Eqp16mNHDX1EL73pcxhFfzbyXVcAYtaDd1xdmDRDtL/go-libp2p-record"
-	ipns "gx/ipfs/QmaRFtZhVAwXBk4Z3zEsvjScH9fjsDZmhXfa1Gm8eMb9cg/go-ipns"
+	u "gx/ipfs/QmNohiVssaPw3KVLZik59DBVGTSm2dGvYT9eoXt5DQ36Yz/go-ipfs-util"
+	mockrouting "gx/ipfs/QmSf6kEpjn1oTU7gdk5Ba7eTTGWUuBfNhHL7bJEiwSyERm/go-ipfs-routing/mock"
+	offline "gx/ipfs/QmSf6kEpjn1oTU7gdk5Ba7eTTGWUuBfNhHL7bJEiwSyERm/go-ipfs-routing/offline"
+	ipns "gx/ipfs/QmVecLVqBPwV4LR4dyBXE9DeBWg1fsdTzBVFVtQnFAmGWA/go-ipns"
+	pstore "gx/ipfs/QmYrNDh2z1sFB7gxYU6kX2f9N8LcWJkAzAKwZqUzvf6d1P/go-libp2p-peerstore"
+	pstoremem "gx/ipfs/QmYrNDh2z1sFB7gxYU6kX2f9N8LcWJkAzAKwZqUzvf6d1P/go-libp2p-peerstore/pstoremem"
 	ds "gx/ipfs/QmaRb5yNXKonhbkpNxNawoydk4N6es6b4fPj19sjEKsh5D/go-datastore"
 	dssync "gx/ipfs/QmaRb5yNXKonhbkpNxNawoydk4N6es6b4fPj19sjEKsh5D/go-datastore/sync"
-	routing "gx/ipfs/QmcQ81jSyWCp1jpkQ8CMbtpXT3jK7Wg6ZtYmoyWFgBoF9c/go-libp2p-routing"
-	ropts "gx/ipfs/QmcQ81jSyWCp1jpkQ8CMbtpXT3jK7Wg6ZtYmoyWFgBoF9c/go-libp2p-routing/options"
-	mockrouting "gx/ipfs/QmcjvUP25nLSwELgUeqWe854S3XVbtsntTr7kZxG63yKhe/go-ipfs-routing/mock"
-	offline "gx/ipfs/QmcjvUP25nLSwELgUeqWe854S3XVbtsntTr7kZxG63yKhe/go-ipfs-routing/offline"
+	routing "gx/ipfs/Qmc268gLyCFsSY3dCGqa4G73Gmtb2mREULbiuAHDoWDJBo/go-libp2p-routing"
+	ropts "gx/ipfs/Qmc268gLyCFsSY3dCGqa4G73Gmtb2mREULbiuAHDoWDJBo/go-libp2p-routing/options"
+	ci "gx/ipfs/QmcgyFuP2SVMhgkTjFaXwnyAi9Fheg6A7SWgpYJKuajPnK/go-libp2p-crypto"
+	testutil "gx/ipfs/Qmcxbk5F1rJ9KeJaKRoZNG7qrexftEM7Rz9y15hi5FHAuk/go-testutil"
+	peer "gx/ipfs/Qme2jJHLnAfULnkrSxmqAn7pGTp3HWVmFYLnuLtxFvH9nA/go-libp2p-peer"
+	record "gx/ipfs/QmeDPtTLoKpATWHWNsyjDteFKRnvT5zKNerMyutd3SSAFp/go-libp2p-record"
 )
 
 func TestResolverValidation(t *testing.T) {
